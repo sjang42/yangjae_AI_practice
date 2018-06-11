@@ -1,4 +1,3 @@
-
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -42,16 +41,17 @@ X_iso = Isomap(n_neighbors=10).fit_transform(x_train)
 fig, ax = plt.subplots(1, 2, figsize=(8, 4))
 
 # Adjust layout
-fig.suptitle('Predicted Versus Training Labels', fontsize=14, fontweight='bold')
+fig.suptitle(
+    'Predicted Versus Training Labels', fontsize=14, fontweight='bold')
 fig.subplots_adjust(top=0.85)
 
-# Add scatterplots to the subplots 
+# Add scatterplots to the subplots
 ax[0].scatter(X_iso[:, 0], X_iso[:, 1], c=clusters)
 ax[0].set_title('Predicted Training Labels')
 ax[1].scatter(X_iso[:, 0], X_iso[:, 1], c=y_train)
 ax[1].set_title('Actual Training Labels')
 
-plt.savefig("digits.png") 
+plt.savefig("digits.png")
 
 ## code for elice
 # eu.send_image("digits.png")
